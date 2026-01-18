@@ -1,35 +1,12 @@
-import { getPosts } from "@/lib/wordpress";
+import { getHomepagePosts } from "@/lib/wordpress";
+import { HomeNewsColumns } from "@/components/HomeNewsColumns";
 
 export default async function HomePage() {
-  const posts = await getPosts();
+  const posts = await getHomepagePosts();
 
   return (
-    <main className="max-w-6xl mx-auto p-6">
-      <h1 className="font-headline mb-8">Latest News</h1>
-
-      <div className="grid gap-8">
-        {posts.map(post => (
-          <article key={post.id} className="border-b border-gray-100 pb-8">
-            <a
-              href={`/article/${post.slug}`}
-              className="font-subheading text-blue-600 hover:underline block mb-2"
-            >
-              {post.title.rendered}
-            </a>
-
-            <div
-              className="font-paragraph text-gray-700"
-              dangerouslySetInnerHTML={{
-                __html: post.excerpt.rendered
-              }}
-            />
-            
-            <span className="font-accent text-sm text-gray-500 mt-2 block">
-              Featured Story
-            </span>
-          </article>
-        ))}
-      </div>
+    <main className="max-w-6xl mx-auto px-6 py-10">
+      <HomeNewsColumns posts={posts} />
     </main>
   );
 }
