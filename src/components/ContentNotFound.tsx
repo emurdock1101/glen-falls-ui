@@ -1,5 +1,10 @@
+"use client";
+  
 import Link from "next/link";
-import { HomeIcon, ArrowLeftIcon, MagnifyingGlassIcon } from "@heroicons/react/24/outline";
+import {
+  HomeIcon,
+  MagnifyingGlassIcon,
+} from "@heroicons/react/24/outline";
 
 interface ContentNotFoundProps {
   title?: string;
@@ -17,17 +22,17 @@ export function ContentNotFound({
           <MagnifyingGlassIcon className="w-12 h-12 text-gray-300" />
         </div>
       </div>
-      
+
       <h1 className="text-4xl md:text-5xl font-merriweather font-black mb-6 tracking-tight text-gray-900 uppercase">
         {title}
       </h1>
-      
+
       <div className="w-20 h-1.5 bg-black mx-auto mb-8"></div>
-      
+
       <p className="text-lg text-gray-600 font-merriweather leading-relaxed mb-12 max-w-lg mx-auto">
         {message}
       </p>
-      
+
       <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
         <Link
           href="/"
@@ -36,19 +41,6 @@ export function ContentNotFound({
           <HomeIcon className="w-4 h-4" />
           Back to Home
         </Link>
-        <button
-          onClick={() => window.history.back()}
-          className="flex items-center gap-2 border border-gray-200 px-8 py-4 font-black uppercase tracking-widest text-[13px] hover:bg-gray-50 transition-colors w-full sm:w-auto justify-center"
-        >
-          <ArrowLeftIcon className="w-4 h-4" />
-          Previous Page
-        </button>
-      </div>
-      
-      <div className="mt-16 pt-8 border-t border-gray-100">
-        <p className="text-sm text-gray-400 font-raleway uppercase tracking-widest">
-          Glens Falls Chronicle &bull; Est. 1980
-        </p>
       </div>
     </div>
   );

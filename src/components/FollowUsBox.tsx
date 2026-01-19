@@ -1,8 +1,4 @@
 import Link from "next/link";
-import FacebookIcon from "@/public/icons/facebook.svg";
-import InstagramIcon from "@/public/icons/instagram.svg";
-import XIcon from "@/public/icons/x.svg";
-import LinkedInIcon from "@/public/icons/linkedin.svg";
 
 export function FollowUsBox() {
   const socialLinks = [
