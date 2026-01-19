@@ -6,6 +6,11 @@ export function Navbar() {
   const navItems = [
     { name: "HOME", href: "/" },
     { name: "ARTICLES", href: "#", hasDropdown: true },
+    {
+      name: "OBITUARIES",
+      href: "https://www.legacy.com/us/obituaries/glensfallschronicle/browse",
+      isExternal: true,
+    },
     { name: "ABOUT", href: "#" },
     { name: "ADVERTISERS", href: "#" },
     { name: "CONTACT", href: "#" },
@@ -24,12 +29,12 @@ export function Navbar() {
             >
               <Link
                 href={item.href}
+                target={item.isExternal ? "_blank" : undefined}
+                rel={item.isExternal ? "noopener noreferrer" : undefined}
                 className="hover:text-gray-600 flex items-center gap-1"
               >
                 {item.name}
-                {item.hasDropdown && (
-                  <ChevronDownIcon className="w-3.5 h-3.5" />
-                )}
+                {item.hasDropdown && <ChevronDownIcon className="w-3.5 h-3.5" />}
               </Link>
             </div>
           ))}
