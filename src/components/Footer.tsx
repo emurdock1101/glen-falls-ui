@@ -1,6 +1,6 @@
 import { getHomepagePosts } from "@/lib/wordpress";
 import { FeaturedPostsList } from "./FeaturedPostsList";
-import { hasTag } from "@/lib/normalizePost";
+import { hasTag } from "@/utils/post-utils";
 import { TAGS } from "@/constants/taxonomy";
 import Link from "next/link";
 import { ScrollToTop } from "./ScrollToTop";
@@ -54,7 +54,7 @@ export async function Footer() {
             <h2 className="text-3xl font-merriweather font-black mb-4 tracking-tight">
               Glens Falls Chronicle
             </h2>
-            <p className="text-white/60 font-raleway text-[15px] leading-relaxed mb-8 max-w-sm">
+            <p className="text-dark-text-secondary font-raleway font-bold text-[15px] leading-relaxed mb-8 max-w-sm">
               Locally owned and locally committed. Bringing you the latest news,
               events, and stories from the Glens Falls region and beyond.
             </p>
@@ -110,7 +110,7 @@ export async function Footer() {
       {/* Copyright Bar */}
       <div className="bg-black py-4">
         <div className="max-w-[1400px] mx-auto px-4 flex justify-center items-center relative">
-          <p className="text-[12px] font-raleway font-medium text-white/60 uppercase tracking-widest">
+          <p className="text-[12px] font-raleway font-bold text-dark-text-secondary uppercase tracking-widest text-center">
             Copyright © 2026 Glen Falls Chronicle
           </p>
           <div className="absolute right-4 top-1/2 -translate-y-1/2">

@@ -18,14 +18,11 @@ export interface WPMedia {
   };
 }
 
-export interface Post {
+export interface WPBaseContent {
   id: number;
   slug: string;
   date: string;
   title: {
-    rendered: string;
-  };
-  excerpt: {
     rendered: string;
   };
   content: {
@@ -39,6 +36,20 @@ export interface Post {
       avatar_urls?: Record<string, string>;
     }>;
     "wp:featuredmedia"?: Array<WPMedia>;
+  };
+}
+
+export interface Post extends WPBaseContent {
+  excerpt: {
+    rendered: string;
+  };
+  _embedded?: WPBaseContent["_embedded"] & {
     "wp:term"?: Array<Array<WPTerm>>;
+  };
+}
+
+export interface Page extends WPBaseContent {
+  excerpt?: {
+    rendered: string;
   };
 }

@@ -29,7 +29,7 @@ export function FeaturedPostsList({
   dark = true,
 }: FeaturedPostsListProps) {
   const textColor = dark ? "text-white" : "text-black";
-  const subTextColor = dark ? "text-white/60" : "text-gray-500";
+  const subTextColor = dark ? "text-dark-text-secondary" : "text-gray-500";
   const borderColor = dark ? "border-white/20" : "border-gray-200";
   const itemBorderColor = dark ? "border-white/10" : "border-gray-100";
 
@@ -71,7 +71,7 @@ export function FeaturedPostsList({
                   />
                 ) : (
                   <div
-                    className={`w-full h-full flex items-center justify-center italic text-[10px] ${subTextColor} font-raleway`}
+                    className={`w-full h-full flex items-center justify-center italic text-[10px] ${subTextColor} font-raleway font-bold`}
                   >
                     NO IMAGE
                   </div>
@@ -87,7 +87,7 @@ export function FeaturedPostsList({
                   </Link>
                 </h4>
                 <div
-                  className={`flex items-center gap-3 text-[10px] ${subTextColor} font-medium font-raleway uppercase tracking-wider`}
+                  className={`flex items-center gap-3 text-[10px] ${subTextColor} font-bold font-raleway uppercase tracking-wider`}
                 >
                   <div className="flex items-center gap-1">
                     <UserIcon className="w-3 h-3" />

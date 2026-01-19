@@ -1,4 +1,5 @@
 import { Post, WPMedia } from "@/app/types";
+import { PAGE_SLUGS } from "@/constants/taxonomy";
 
 const WP_BASE_DOMAIN = process.env.NEXT_PUBLIC_WP_BASE_URL!;
 const WP_BASE_URL = `${WP_BASE_DOMAIN}/wp-json/wp/v2`;
@@ -55,3 +56,22 @@ export async function getHomepagePosts(): Promise<Post[]> {
 
   return res.json();
 }
+
+export async function getOurStoryPage(): Promise<Post | null> {
+  try {
+    const res = await fetch(
+      `${WP_BASE_URL}/pages?_embed&slug=${PAGE_SLUGS.ABOUT}`,
+      { cache: "no-store" }
+    );
+
+    if (!res.ok) return null;
+
+    const pages = await res.json();
+
+    return pages.length ? pages[0] : null;
+  } catch (e) {
+    console.error("Error fetching Our Story page:", e);
+    return null;
+  }
+}
+

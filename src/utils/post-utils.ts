@@ -1,6 +1,5 @@
-import { Post } from "@/app/types";
-import { hasTag } from "@/lib/normalizePost";
 import { TAGS } from "@/constants/taxonomy";
+import { Post, WPTerm } from "@/app/types";
 
 /**
  * Checks if a WordPress post has a featured image embedded.
@@ -70,4 +69,27 @@ export function filterPostsByTag(posts: Post[], tagSlug: string): Post[] {
  */
 export function getTrendingPosts(posts: Post[]): Post[] {
   return filterPostsByTag(posts, TAGS.TRENDING);
+}
+
+/**
+ * Filters out posts with a specific tag slug.
+ */
+export function excludePostsByTag(posts: Post[], tagSlug: string): Post[] {
+  return posts.filter(post => !hasTag(post, tagSlug));
+}
+
+export function getPostCategories(post: Post): WPTerm[] {
+  return post._embedded?.["wp:term"]?.[0] ?? [];
+}
+
+export function getPostTags(post: Post): WPTerm[] {
+  return post._embedded?.["wp:term"]?.[1] ?? [];
+}
+
+export function hasTag(post: Post, tagSlug: string): boolean {
+  return getPostTags(post).some((tag: WPTerm) => tag.slug === tagSlug);
+}
+
+export function getPrimaryCategory(post: Post): WPTerm | undefined {
+  return getPostCategories(post)[0]; // WP usually orders intentionally
 }

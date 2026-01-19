@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getPrimaryCategory } from "@/lib/normalizePost";
+import { getPrimaryCategory } from "@/utils/post-utils";
 import { Post } from "@/app/types";
 import { getAuthorName, formatDate } from "@/utils/post-utils";
 

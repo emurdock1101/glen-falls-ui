@@ -5,6 +5,7 @@
   --foreground: #171717;
   --footer-bg: #1C1C1C;
   --footer-text: #ffffff;
+  --dark-text-secondary: #b3b3b3;
 }
 
 @theme inline {
@@ -12,6 +13,7 @@
   --color-foreground: var(--foreground);
   --color-footer-bg: var(--footer-bg);
   --color-footer-text: var(--footer-text);
+  --color-dark-text-secondary: var(--dark-text-secondary);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-merriweather: var(--font-merriweather);

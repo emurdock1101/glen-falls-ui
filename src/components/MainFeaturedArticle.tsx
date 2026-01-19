@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { getPrimaryCategory } from "@/lib/normalizePost";
+import { getPrimaryCategory } from "@/utils/post-utils";
 import { Post } from "@/app/types";
 import { getFeaturedImageUrl, getAuthorName, formatDate } from "@/utils/post-utils";
 

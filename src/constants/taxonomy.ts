@@ -4,6 +4,10 @@ export const TAGS = {
   POPULAR: "popular",
 } as const;
 
+export const PAGE_SLUGS = {
+  ABOUT: "our-story",
+} as const;
+
 export const CATEGORIES = {
   BUSINESS: "business",
   TECHNOLOGY: "technology",

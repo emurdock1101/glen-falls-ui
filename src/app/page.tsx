@@ -4,8 +4,10 @@ import { MainFeaturedArticle } from "@/components/MainFeaturedArticle";
 import { FrontPagePreview } from "@/components/FrontPagePreview";
 import { BoldPostsList } from "@/components/BoldPostsList";
 import { SquareImagePostsList } from "@/components/SquareImagePostsList";
-import { Post } from "./types";
-import { getPostsWithImages, getTrendingPosts } from "@/utils/post-utils";
+import {
+  getPostsWithImages,
+  getTrendingPosts,
+} from "@/utils/post-utils";
 
 export default async function HomePage() {
   const [posts, frontPageMedia] = await Promise.all([

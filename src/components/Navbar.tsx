@@ -11,7 +11,10 @@ export function Navbar() {
       href: "https://www.legacy.com/us/obituaries/glensfallschronicle/browse",
       isExternal: true,
     },
-    { name: "ABOUT", href: "#" },
+    {
+      name: "ABOUT",
+      href: "/about",
+    },
     { name: "ADVERTISERS", href: "#" },
     { name: "CONTACT", href: "#" },
     { name: "OTHER", href: "#", hasDropdown: true },
