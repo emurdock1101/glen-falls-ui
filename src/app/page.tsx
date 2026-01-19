@@ -1,10 +1,16 @@
-import { getHomepagePosts } from "@/lib/wordpress";
+import { getHomepagePosts, getLatestFrontPagePdf } from "@/lib/wordpress";
 import { HomeNewsColumns } from "@/components/HomeNewsColumns";
 import { MainFeaturedArticle } from "@/components/MainFeaturedArticle";
+import { FrontPagePreview } from "@/components/FrontPagePreview";
 
 export default async function HomePage() {
-  const posts = await getHomepagePosts();
-  
+  const [posts, frontPageMedia] = await Promise.all([
+    getHomepagePosts(),
+    getLatestFrontPagePdf(),
+  ]);
+
+  console.log("frontPageMedia", JSON.stringify(frontPageMedia, null, 2));
+
   // Let's assume the first post is the featured one
   const featuredPost = posts[0];
 
@@ -14,7 +20,8 @@ export default async function HomePage() {
         <div className="lg:w-2/3">
           <MainFeaturedArticle post={featuredPost} />
         </div>
-        <div className="lg:w-1/3">
+        <div className="lg:w-1/3 flex flex-col gap-10">
+          <FrontPagePreview media={frontPageMedia} />
           <HomeNewsColumns posts={posts} />
         </div>
       </div>

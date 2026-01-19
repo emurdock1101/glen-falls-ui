@@ -1,5 +1,11 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Merriweather, Raleway, Playfair_Display } from "next/font/google";
+import {
+  Geist,
+  Geist_Mono,
+  Merriweather,
+  Raleway,
+  Playfair_Display,
+} from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 

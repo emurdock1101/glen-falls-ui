@@ -17,7 +17,10 @@ export function MainFeaturedArticle({ post }: { post: any }) {
           </span>
         )}
         <h1 className="text-4xl font-merriweather font-black leading-[1.1] mb-4 tracking-tight">
-          <Link href={`/article/${post.slug}`} className="hover:text-gray-800 transition-colors">
+          <Link
+            href={`/article/${post.slug}`}
+            className="hover:text-gray-800 transition-colors"
+          >
             {post.title.rendered}
           </Link>
         </h1>
@@ -75,7 +78,7 @@ export function MainFeaturedArticle({ post }: { post: any }) {
             <span>0</span>
           </div>
         </div>
-        <div 
+        <div
           className="text-[15px] text-gray-700 leading-relaxed font-merriweather columns-1 md:columns-2 gap-6 first-letter:text-6xl first-letter:font-black first-letter:float-left first-letter:mr-3 first-letter:mt-1 first-letter:leading-none"
           dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }}
         />

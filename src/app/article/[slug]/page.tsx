@@ -5,7 +5,7 @@ export default async function ArticlePage({
 }: {
   params: Promise<{ slug: string }>; // notice Promise<>
 }) {
-  const { slug } = await params;  // <-- unwrap here
+  const { slug } = await params; // <-- unwrap here
   const post = await getPostBySlug(slug);
 
   if (!post) {

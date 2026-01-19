@@ -13,9 +13,7 @@ export function ArticlePreview({ post }: { post: any }) {
       )}
 
       <h2 className="text-xl font-serif font-semibold leading-tight">
-        <Link href={`/article/${post.slug}`}>
-          {post.title.rendered}
-        </Link>
+        <Link href={`/article/${post.slug}`}>{post.title.rendered}</Link>
       </h2>
 
       <div className="text-sm text-gray-500 mt-2 flex gap-4">

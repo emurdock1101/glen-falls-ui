@@ -8,8 +8,8 @@ import { TAGS } from "@/constants/taxonomy";
 export function HomeNewsColumns({ posts }: { posts: any[] }) {
   const [activeTab, setActiveTab] = useState<"latest" | "trending">("latest");
 
-  const latest = posts.filter((p) => hasTag(p, TAGS.LATEST));
-  const trending = posts.filter((p) => hasTag(p, TAGS.TRENDING));
+  const latest = posts.filter(p => hasTag(p, TAGS.LATEST));
+  const trending = posts.filter(p => hasTag(p, TAGS.TRENDING));
 
   const displayPosts = activeTab === "latest" ? latest : trending;
 
@@ -19,7 +19,9 @@ export function HomeNewsColumns({ posts }: { posts: any[] }) {
         <button
           onClick={() => setActiveTab("latest")}
           className={`flex-1 py-4 flex flex-col items-center justify-center transition-colors relative ${
-            activeTab === "latest" ? "text-black" : "text-gray-400 hover:text-gray-600"
+            activeTab === "latest"
+              ? "text-black"
+              : "text-gray-400 hover:text-gray-600"
           }`}
         >
           {activeTab === "latest" && (
@@ -37,12 +39,16 @@ export function HomeNewsColumns({ posts }: { posts: any[] }) {
             <circle cx="12" cy="12" r="10" />
             <polyline points="12 6 12 12 16 14" />
           </svg>
-          <span className="text-[11px] font-bold uppercase tracking-wider font-raleway">Latest News</span>
+          <span className="text-[11px] font-bold uppercase tracking-wider font-raleway">
+            Latest News
+          </span>
         </button>
         <button
           onClick={() => setActiveTab("trending")}
           className={`flex-1 py-4 flex flex-col items-center justify-center transition-colors relative ${
-            activeTab === "trending" ? "text-black" : "text-gray-400 hover:text-gray-600"
+            activeTab === "trending"
+              ? "text-black"
+              : "text-gray-400 hover:text-gray-600"
           }`}
         >
           {activeTab === "trending" && (
@@ -59,13 +65,22 @@ export function HomeNewsColumns({ posts }: { posts: any[] }) {
           >
             <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z" />
           </svg>
-          <span className="text-[11px] font-bold uppercase tracking-wider font-raleway">Trending News</span>
+          <span className="text-[11px] font-bold uppercase tracking-wider font-raleway">
+            Trending News
+          </span>
         </button>
       </div>
 
       <div className="p-0">
         {displayPosts.slice(0, 5).map((post, index) => (
-          <div key={post.id} className={index !== displayPosts.slice(0, 5).length - 1 ? "border-b border-gray-100" : ""}>
+          <div
+            key={post.id}
+            className={
+              index !== displayPosts.slice(0, 5).length - 1
+                ? "border-b border-gray-100"
+                : ""
+            }
+          >
             <ArticlePreviewSmall post={post} />
           </div>
         ))}
