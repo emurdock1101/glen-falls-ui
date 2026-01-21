@@ -39,8 +39,8 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Glen Falls Chronicle",
-  description: "Locally owned, locally comitted",
+  title: "Glen Falls Chronicle | Northern New York's Leading Newspaper",
+  description: "Northern New York's Leading Newspaper",
 };
 
 export default function RootLayout({

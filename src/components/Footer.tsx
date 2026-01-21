@@ -4,46 +4,12 @@ import { hasTag } from "@/utils/post-utils";
 import { TAGS } from "@/constants/taxonomy";
 import Link from "next/link";
 import { ScrollToTop } from "./ScrollToTop";
+import { socialMediaIcons } from "./icons/social-media-icons";
 
 export async function Footer() {
   const posts = await getHomepagePosts();
   const latest = posts.filter((p: any) => hasTag(p, TAGS.LATEST));
   const trending = posts.filter((p: any) => hasTag(p, TAGS.TRENDING));
-
-  const socialLinks = [
-    {
-      name: "Facebook",
-      icon: (
-        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-      ),
-    },
-    {
-      name: "Instagram",
-      icon: (
-        <>
-          <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-          <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
-        </>
-      ),
-    },
-    {
-      name: "X",
-      icon: (
-        <path d="M4 4l11.733 16h4.267l-11.733-16z M4 20l6.768-6.768 M13.232 10.768L20 4" />
-      ),
-    },
-    {
-      name: "LinkedIn",
-      icon: (
-        <>
-          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-          <rect width="4" height="12" x="2" y="9" />
-          <circle cx="4" cy="4" r="2" />
-        </>
-      ),
-    },
-  ];
 
   return (
     <footer className="bg-footer-bg text-footer-text pt-16 mt-16">
@@ -66,10 +32,10 @@ export async function Footer() {
                 </h4>
               </div>
               <div className="flex gap-3">
-                {socialLinks.map(social => (
+                {socialMediaIcons.map(social => (
                   <Link
                     key={social.name}
-                    href="#"
+                    href={social.href}
                     className="w-10 h-10 border border-white/20 flex items-center justify-center hover:bg-white/10 transition-colors bg-white/5"
                   >
                     <svg

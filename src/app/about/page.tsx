@@ -70,7 +70,7 @@ export default async function AboutPage() {
                 <span className="block text-[13px] font-black uppercase tracking-widest font-raleway text-black">
                   Find the Chronicle
                 </span>
-                <span className="block text-xs text-gray-400 font-raleway">
+                <span className="font-subheading">
                   Available at 100+ locations
                 </span>
               </div>
@@ -86,7 +86,7 @@ export default async function AboutPage() {
                 <span className="block text-[13px] font-black uppercase tracking-widest font-raleway text-black">
                   Contact the Office
                 </span>
-                <span className="block text-xs text-gray-400 font-raleway">
+                <span className="font-subheading">
                   office@glensfallschronicle.com
                 </span>
               </div>

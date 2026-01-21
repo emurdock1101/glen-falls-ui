@@ -58,3 +58,9 @@ export interface FrontPagePreviewMedia {
   image: WPMedia | null;
   pdf: WPMedia | null;
 }
+
+export interface IconLink {
+  name: string;
+  icon: React.ReactNode;
+  href: string;
+}
