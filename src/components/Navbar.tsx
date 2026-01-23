@@ -17,7 +17,7 @@ export function Navbar() {
     },
     { name: "ADVERTISE WITH US", href: "#" },
     { name: "CONTACT", href: "#" },
-    { name: "FIND THE CHRONICLE", href: "#" },
+    { name: "FIND THE CHRONICLE", href: "/find-us" },
   ];
 
   return (
@@ -36,7 +36,9 @@ export function Navbar() {
                 className="hover:text-gray-600 flex items-center gap-1"
               >
                 {item.name}
-                {item.hasDropdown && <ChevronDownIcon className="w-3.5 h-3.5" />}
+                {item.hasDropdown && (
+                  <ChevronDownIcon className="w-3.5 h-3.5" />
+                )}
               </Link>
             </div>
           ))}

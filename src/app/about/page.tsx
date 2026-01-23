@@ -139,7 +139,7 @@ export default async function AboutPage() {
           {/* Find Us */}
           <div className="flex flex-col gap-4 px-2">
             <Link
-              href="#"
+              href="/find-us"
               className="flex items-center gap-3 text-gray-600 hover:text-black transition-colors"
             >
               <div className="w-10 h-10 bg-gray-100 flex items-center justify-center rounded-full">
