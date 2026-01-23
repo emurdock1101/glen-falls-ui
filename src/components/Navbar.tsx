@@ -16,7 +16,7 @@ export function Navbar() {
       href: "/about",
     },
     { name: "ADVERTISE WITH US", href: "#" },
-    { name: "CONTACT", href: "#" },
+    { name: "CONTACT", href: "/contact" },
     { name: "FIND THE CHRONICLE", href: "/find-us" },
   ];
 
